@@ -35,6 +35,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
   @override
   void initState() {
     Provider.of<MovieProvider>(context, listen: false).loadMovies(context);
@@ -50,7 +51,7 @@ class _HomeState extends State<Home> {
       ),
       body: Center(
         child: ListView.builder(
-            itemCount: movieData.movieList.length,
+            itemCount: movieData.movieList.length,//how many items should be shown
             itemBuilder: (context, index) {
               final movie = movieData.movieList[index];
               return MovieCard(movie: movie);

@@ -12,7 +12,13 @@ class MovieProvider extends ChangeNotifier {
     // "Pulp Fiction",
   ];
 
+  // List<String> get movieList => _movieList;
+
   List<Movie> get movieList => _movieList;
+
+  // List<String> loadMovies() {
+  //   return _movieList;
+  // }
 
   Future<void> loadMovies(BuildContext context) async {
     try {
@@ -28,7 +34,4 @@ class MovieProvider extends ChangeNotifier {
       print('Erro loading movies: $e');
     }
   }
-  // List<String> loadMovies() {
-  //   return _movieList;
-  // }
 }
