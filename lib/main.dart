@@ -44,7 +44,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
     final movieData = Provider.of<MovieProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Movies'),
@@ -53,7 +55,9 @@ class _HomeState extends State<Home> {
         child: ListView.builder(
             itemCount: movieData.movieList.length,//how many items should be shown
             itemBuilder: (context, index) {
+
               final movie = movieData.movieList[index];
+
               return MovieCard(movie: movie);
             }),
       ),
