@@ -3,6 +3,7 @@ import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/pages/movie_details.dart';
 
 class MovieCard extends StatelessWidget {
+
   const MovieCard({
     super.key,
     required this.movie,
@@ -14,6 +15,7 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Card(
       child: ExpansionTile(
         title: Text(movie.title),
@@ -37,14 +39,16 @@ class MovieCard extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .labelLarge
-                              ?.copyWith(fontWeight: FontWeight.bold)),
+                              ?.copyWith(fontWeight: FontWeight.bold)
+                      ),
                       TextSpan(text: '${movie.released}: \n'),
                       TextSpan(
                           text: 'Plot: ',
                           style: Theme.of(context)
                               .textTheme
                               .labelLarge
-                              ?.copyWith(fontWeight: FontWeight.bold)),
+                              ?.copyWith(fontWeight: FontWeight.bold)
+                      ),
                       TextSpan(text: '${movie.plot} '),
                     ])),
                 isDetails
@@ -55,9 +59,8 @@ class MovieCard extends StatelessWidget {
                           // use Navigation
                           Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      MovieDetails(movie: movie)));
+                              MaterialPageRoute(builder: (context) => MovieDetails(movie: movie))
+                          );
                         },
                         child: const Text('Read More'))
               ],
